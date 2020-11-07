@@ -1,1 +1,1 @@
-# Frontend Assessment
+# Codingal Frontend Assessment
