@@ -1,0 +1,42 @@
+/* ------------------------ reset browser default css ----------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, sans-serif;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+img {
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------- utility classes ---------------------------- */
+
+.btn-orange {
+    background-color: #ff5a43;
+    border: 1px solid #ff5a43;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7.5px 15px;
+    border-radius: 2px;
+}
+
+.btn-orange:hover {
+    opacity: 0.8;
+}
+
+.btn-orange:focus {
+    border: 1px solid black;
+}
+
+/* -------------------------------------------------------------------------- */
