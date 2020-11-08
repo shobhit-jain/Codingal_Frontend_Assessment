@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="css/navbar.css" />
 
         <link rel="stylesheet" href="css/common.css" />
+
+        <link rel="stylesheet" href="css/modal.css" />
     </head>
 
     <body>
@@ -31,7 +33,7 @@
                     href="/"
                     style="text-decoration: none; display: inline-block"
                 >
-                    <!-- ---------------------------- desktop_logo ----------------------------- -->
+                    <!-- desktop_logo -->
                     <div class="desktop_logo" style="display: none">
                         <div class="desktop_logo_wrapper">
                             <img
@@ -44,31 +46,36 @@
                             <p class="title">Trial Lesson [Grade 1-3]</p>
                         </div>
                     </div>
+                    <!--  -->
 
-                    <!-- ----------------------------------------------------------------------- -->
-
-                    <!-- ----------------------------- mobile_logo ----------------------------- -->
+                    <!-- mobile_logo -->
                     <img
                         src="images/svg/logo-with-text.svg"
                         alt="logo"
                         class="mobile_logo"
                         width="100"
                     />
-                    <!-- ----------------------------------------------------------------------- -->
+                    <!--  -->
                 </a>
 
                 <div
                     class="count_down_and_btn mobile_nav"
                     style="display: none"
                 >
-                    <div style="display: block; font-size: 13px" class="timer">
-                        10 : 00
+                    <div
+                        style="display: block; font-size: 13px"
+                        class="timer"
+                        id="time"
+                    >
+                        10:00
                     </div>
-                    <button class="btn-orange">End Class</button>
+
+                    <button class="btn-orange" id="open_modal_btn">
+                        End Class
+                    </button>
                 </div>
 
-                <!-- -------------------- hamburger for mobile & tablet -------------------- -->
-
+                <!-- hamburger for mobile & tablet -->
                 <img
                     src="images/svg/hamburger.svg"
                     alt="hamburger"
@@ -80,11 +87,127 @@
                     class="close_icon"
                     style="display: none"
                 />
-
-                <!-- ----------------------------------------------------------------------- -->
+                <!--  -->
             </div>
         </div>
 
-        <script src="javascript/script.js"></script>
+        <!-- The Modal -->
+        <div class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="modal_close_icon">&times;</span>
+                <h2 style="margin-bottom: 30px; margin-top: 30px">
+                    Select a reason to end class
+                </h2>
+
+                <div>
+                    <input
+                        type="radio"
+                        id="class_completed"
+                        name="class_interrupted"
+                        value="class_completed"
+                        class="class_completed"
+                        checked
+                    />
+                    <label for="class_completed">Class completed</label><br />
+
+                    <br />
+
+                    <!-- Class interrupted/aborted -->
+                    <input
+                        type="radio"
+                        id="class_interrupted"
+                        name="class_interrupted"
+                        class="class_interrupted_accordion"
+                    />
+                    <label for="class_interrupted"
+                        >Class interrupted/aborted</label
+                    ><br />
+
+                    <ul class="panel class_interrupted_panel">
+                        <!-- Children of this one -->
+                        <li>
+                            <input
+                                type="radio"
+                                name="class"
+                                id="class_interrupted"
+                                class="child_radio"
+                            />
+                            <label for="class_interrupted"
+                                >Student didn't show up for the class.</label
+                            >
+                        </li>
+
+                        <li>
+                            <input
+                                type="radio"
+                                name="class"
+                                id="class_interrupted"
+                                class="child_radio"
+                            />
+                            <label for="class_interrupted"
+                                >Student didn't show up any interest.</label
+                            >
+                        </li>
+
+                        <li>
+                            <input
+                                type="radio"
+                                name="class"
+                                id="class_interrupted"
+                                class="child_radio"
+                            />
+                            <label for="class_interrupted"
+                                >Student got disconnected.</label
+                            >
+                        </li>
+
+                        <li>
+                            <input
+                                type="radio"
+                                name="class"
+                                id="class_interrupted"
+                                class="child_radio"
+                                checked
+                            />
+                            <label for="class_interrupted"
+                                >I got disconnected.</label
+                            >
+                        </li>
+
+                        <li>
+                            <input
+                                type="radio"
+                                name="class"
+                                id="class_interrupted"
+                                class="other_reason"
+                            />
+                            <label for="class_interrupted">other reason.</label>
+                            <textarea
+                                style="display: block; margin-top: 10px"
+                                class="panel other_reason_panel"
+                                name="class"
+                                id="textarea"
+                                cols="30"
+                                rows="5"
+                            ></textarea>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 40px; margin-bottom: 30px">
+                        <button class="btn-orange modal_btn_end_class">
+                            End Class
+                        </button>
+                        <span class="modal_btn_cancel">Cancel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
+        <script src="javascript/navbar.js"></script>
+        <script src="javascript/modal.js"></script>
+        <script src="javascript/countdown.js"></script>
+        <script src="javascript/modal_accordion.js"></script>
     </body>
 </html>

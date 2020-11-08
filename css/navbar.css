@@ -9,7 +9,7 @@
 
 .nav_bar {
     background-color: white;
-    box-shadow: 0px 0px 1.3px 0.2px grey;
+    box-shadow: 0px 0px 0.6px 0px grey;
     padding: 15px 0;
 }
 
@@ -82,6 +82,16 @@
 
     .icon_visible {
         display: block !important;
+    }
+
+    .icon_transition_visible {
+        transition: 0.35s ease-in;
+        opacity: 1;
+    }
+
+    .icon_transition_hidden {
+        transition: 0.35s ease-out;
+        opacity: 0;
     }
 
     .icon_hidden {
